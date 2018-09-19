@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using DapperExtensions.Sql;
 using DapperExtensions.Mapper;
 
@@ -223,6 +221,16 @@ namespace DapperExtensions
         public static IMultipleResultReader GetMultiple(this IDbConnection connection, GetMultiplePredicate predicate, IDbTransaction transaction = null, int? commandTimeout = null)
         {
             return Instance.GetMultiple(connection, predicate, transaction, commandTimeout);
+        }
+
+        public static T SingleOrDefault<T>(IDbConnection connection, object predicate, IDbTransaction transaction, int? commandTimeout, bool buffered) where T : class
+        {
+            return Instance.SingleOrDefault<T>(connection, predicate, transaction, commandTimeout);
+        }
+
+        public static T FirstOrDefault<T>(IDbConnection connection, object predicate, IDbTransaction transaction, int? commandTimeout, bool buffered) where T : class
+        {
+            return Instance.FirstOrDefault<T>(connection, predicate, transaction, commandTimeout);
         }
 
         /// <summary>
