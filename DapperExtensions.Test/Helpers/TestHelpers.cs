@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.Data.SqlClient;
-using System.Data.SqlServerCe;
 using System.IO;
 using System.Linq;
 using System.Threading;

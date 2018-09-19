@@ -24,7 +24,7 @@ namespace DapperExtensions.Test.IntegrationTests.Oracle
             }
 
             [Test]
-            [Ignore] // TODO add MultiKey support for oracle
+            [Ignore("")] // TODO add MultiKey support for oracle
             public void AddsEntityToDatabase_ReturnsCompositeKey()
             {
                 Multikey m = new Multikey { Key2 = "key", Value = "foo" };
@@ -80,7 +80,7 @@ namespace DapperExtensions.Test.IntegrationTests.Oracle
             }
 
             [Test]
-            [Ignore] // TODO add MultiKey support for oracle
+            [Ignore("")] // TODO add MultiKey support for oracle
             public void UsingCompositeKey_ReturnsEntity()
             {
                 Multikey m1 = new Multikey { Key2 = "key", Value = "bar" };
@@ -114,7 +114,7 @@ namespace DapperExtensions.Test.IntegrationTests.Oracle
             }
 
             [Test]
-            [Ignore] // TODO add MultiKey support for oracle
+            [Ignore("")] // TODO add MultiKey support for oracle
             public void UsingCompositeKey_DeletesFromDatabase()
             {
                 Multikey m1 = new Multikey { Key2 = "key", Value = "bar" };
@@ -195,7 +195,7 @@ namespace DapperExtensions.Test.IntegrationTests.Oracle
             }
 
             [Test]
-            [Ignore] // TODO add MultiKey support for oracle
+            [Ignore("")] // TODO add MultiKey support for oracle
             public void UsingCompositeKey_UpdatesEntity()
             {
                 Multikey m1 = new Multikey { Key2 = "key", Value = "bar" };

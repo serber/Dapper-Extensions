@@ -23,7 +23,7 @@ namespace DapperExtensions.Test.IntegrationTests.Sqlite
             }
 
             [Test]
-            [Ignore] //TODO: multikey identity
+            [Ignore("")] //TODO: multikey identity
             public void AddsEntityToDatabase_ReturnsCompositeKey()
             {
                 Multikey m = new Multikey { Key2 = "key", Value = "foo" };
@@ -110,7 +110,7 @@ namespace DapperExtensions.Test.IntegrationTests.Sqlite
             }
 
             [Test]
-            [Ignore] //TODO: multikey identity
+            [Ignore("")] //TODO: multikey identity
             public void UsingCompositeKey_ReturnsEntity()
             {
                 Multikey m1 = new Multikey { Key2 = "key", Value = "bar" };
@@ -144,7 +144,7 @@ namespace DapperExtensions.Test.IntegrationTests.Sqlite
             }
 
             [Test]
-            [Ignore] //TODO: multikey identity
+            [Ignore("")] //TODO: multikey identity
             public void UsingCompositeKey_DeletesFromDatabase()
             {
                 Multikey m1 = new Multikey { Key2 = "key", Value = "bar" };
@@ -225,7 +225,7 @@ namespace DapperExtensions.Test.IntegrationTests.Sqlite
             }
 
             [Test]
-            [Ignore] //TODO: multikey identity
+            [Ignore("")] //TODO: multikey identity
             public void UsingCompositeKey_UpdatesEntity()
             {
                 Multikey m1 = new Multikey { Key2 = "key", Value = "bar" };
