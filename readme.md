@@ -1,6 +1,6 @@
 # Introduction
 
-This is net core compatible version of DupperExtensions
+This is net core compatible version of [DupperExtensions](https://github.com/tmsmith/Dapper-Extensions)
 
 # Installation
 
