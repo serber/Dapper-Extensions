@@ -223,12 +223,12 @@ namespace DapperExtensions
             return Instance.GetMultiple(connection, predicate, transaction, commandTimeout);
         }
 
-        public static T SingleOrDefault<T>(IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class
+        public static T SingleOrDefault<T>(this IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class
         {
             return Instance.SingleOrDefault<T>(connection, predicate, transaction, commandTimeout);
         }
 
-        public static T FirstOrDefault<T>(IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class
+        public static T FirstOrDefault<T>(this IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class
         {
             return Instance.FirstOrDefault<T>(connection, predicate, transaction, commandTimeout);
         }
