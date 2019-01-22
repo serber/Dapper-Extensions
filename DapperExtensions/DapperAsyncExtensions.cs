@@ -211,12 +211,12 @@ namespace DapperExtensions
             return await Instance.GetSetAsync<T>(connection, predicate, sort, firstResult, maxResults, transaction, commandTimeout);
         }
 
-        public static async Task<T> SingleOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction, int? commandTimeout, bool buffered) where T : class
+        public static async Task<T> SingleOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class
         {
             return await Instance.SingleOrDefaultAsync<T>(connection, predicate, transaction, commandTimeout);
         }
 
-        public static async Task<T> FirstOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction, int? commandTimeout, bool buffered) where T : class
+        public static async Task<T> FirstOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class
         {
             return await Instance.FirstOrDefaultAsync<T>(connection, predicate, transaction, commandTimeout);
         }

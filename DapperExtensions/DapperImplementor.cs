@@ -276,7 +276,7 @@ namespace DapperExtensions
             return GetMultipleBySequence(connection, predicate, transaction, commandTimeout);
         }
 
-        public T SingleOrDefault<T>(IDbConnection connection, object predicate, IDbTransaction transaction, int? commandTimeout) where T : class
+        public T SingleOrDefault<T>(IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class
         {
             IClassMapper classMap = SqlGenerator.Configuration.GetMap<T>();
             IPredicate wherePredicate = GetPredicate(classMap, predicate);
@@ -292,7 +292,7 @@ namespace DapperExtensions
             return connection.QuerySingleOrDefault<T>(sql, parameters, transaction, commandTimeout, CommandType.Text);
         }
 
-        public T FirstOrDefault<T>(IDbConnection connection, object predicate, IDbTransaction transaction, int? commandTimeout) where T : class
+        public T FirstOrDefault<T>(IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class
         {
             IClassMapper classMap = SqlGenerator.Configuration.GetMap<T>();
             IPredicate wherePredicate = GetPredicate(classMap, predicate);

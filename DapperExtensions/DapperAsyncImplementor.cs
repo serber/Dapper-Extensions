@@ -58,9 +58,9 @@ namespace DapperExtensions
         /// </summary>
         Task<bool> DeleteAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction, int? commandTimeout) where T : class;
 
-        Task<T> SingleOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction, int? commandTimeout) where T : class;
+        Task<T> SingleOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class;
 
-        Task<T> FirstOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction, int? commandTimeout) where T : class;
+        Task<T> FirstOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class;
     }
 
     public class DapperAsyncImplementor : DapperImplementor, IDapperAsyncImplementor
@@ -323,7 +323,7 @@ namespace DapperExtensions
             return (int)(await connection.QueryAsync(sql, dynamicParameters, transaction, commandTimeout, CommandType.Text)).Single().Total;
         }
 
-        public async Task<T> SingleOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction, int? commandTimeout) where T : class
+        public async Task<T> SingleOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class
         {
             IClassMapper classMap = SqlGenerator.Configuration.GetMap<T>();
             IPredicate wherePredicate = GetPredicate(classMap, predicate);
@@ -339,7 +339,7 @@ namespace DapperExtensions
             return await connection.QuerySingleOrDefaultAsync<T>(sql, parameters, transaction, commandTimeout, CommandType.Text);
         }
 
-        public async Task<T> FirstOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction, int? commandTimeout) where T : class
+        public async Task<T> FirstOrDefaultAsync<T>(IDbConnection connection, object predicate, IDbTransaction transaction = null, int? commandTimeout = null) where T : class
         {
             IClassMapper classMap = SqlGenerator.Configuration.GetMap<T>();
             IPredicate wherePredicate = GetPredicate(classMap, predicate);

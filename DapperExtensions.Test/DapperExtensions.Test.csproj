@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net471;netcoreapp2.1;netstandard2.0</TargetFrameworks>
+    <TargetFramework>net471</TargetFramework>
     <AssemblyName>DapperExtensions.Test</AssemblyName>
     <PackageId>DapperExtensions.Test</PackageId>
   </PropertyGroup>
