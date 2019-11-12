@@ -8,18 +8,18 @@
 
   <ItemGroup>
     
-    <PackageReference Include="Moq" Version="4.10.0" />
-    <PackageReference Include="MySql.Data" Version="8.0.12" />
-    <PackageReference Include="NUnit" Version="3.10.1" />
+    <PackageReference Include="Moq" Version="4.13.1" />
+    <PackageReference Include="MySql.Data" Version="8.0.18" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit.Mocks" Version="2.6.4" />    
     <PackageReference Include="pNUnit" Version="2.6.4" />
-    <PackageReference Include="System.Data.SQLite" Version="1.0.109.1" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.112" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net471'">
     <PackageReference Include="IBM.Data.DB2" Version="10.0.5.5" />
     <PackageReference Include="SqlServerCompact" Version="4.0.8854.1" />
-    <PackageReference Include="Oracle.ManagedDataAccess" Version="18.3.0" />
+    <PackageReference Include="Oracle.ManagedDataAccess" Version="19.5.0" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' != 'net471'">
